@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>d</title>
+</head>
+<style type="text/css" media="screen">
+input[type="checkbox"] {
+    width: 30px;
+    height: 30px;
+}
+
+label {
+    height: 100%;
+    vertical-align: text-top;
+}
+
+div.active {
+    display: block;
+}
+
+.select {
+    display: none;
+}
+
+.input {
+    width: 200px;
+    height: 20px;
+    background: yellow;
+    border-bottom: 2px solid #ccc;
+    background-image: url('https://cdn1.iconfinder.com/data/icons/pixel-perfect-at-16px-volume-2/16/5001-128.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    padding-right: 10px;
+}
+
+.hover {
+    display: block
+}
+input[type="radio"]{
+	width:0px;
+	height: 0px;
+	opacity: 0;
+	position: absolute;
+}
+</style>
+
+<body>
+    <form action="">
+        <div class="input">Валюта</div>
+        <div class="select">
+            <div class="option">
+                <input value="Рубли" name="val" type="radio" id="r1">
+                <label for="r1">Рубли</label>
+            </div>
+            <div class="option">
+                <input value="Доллар" name="val" type="radio" id="r2">
+                <label for="r2">Доллар</label>
+            </div>
+            <div class="option">
+                <input value="Евро" name="val" type="radio" id="r3">
+                <label for="r3">Евро</label>
+            </div>
+        </div>
+    </form>
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+    <script>
+    $(document).ready(function() {
+        $('.input').click(function() {
+            $('.select').toggleClass('hover');
+
+        })
+        $('body').click(function(){
+        	textq = $('input:checked').val();
+        console.log(textq);
+        $('.input').text(textq);
+
+        })
+        
+
+
+    })
+
+    </script>
+</body>
+
+</html>
